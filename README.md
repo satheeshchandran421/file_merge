@@ -10,10 +10,10 @@ to support other file types as well.
 Please refer to 'main.cpp' to see example code to demonstrate the functionality.
 
 Example:
+
     string target = "/var/log/result";
     FILES_LIST ar_list = {"/var/log/systemlog/3108-01-31.tgz",
                           "/var/log/systemlog/3108-01-30.tgz",
                          };
-
     bool ret = merge_files(ar_list, target);
     
