@@ -11,7 +11,7 @@ using FILES_LIST = list<string>;
 using SORTED_LIST = unordered_map<string, FILES_LIST>;
 constexpr char TAR_CMD[] = "tar -xf ";
 // Interface class for merging functionality. The function do_merge()
-// has to be overriden in the child clas and has to implement the logic.
+// has to be overriden in the child class and has to implement the logic.
 class IMerge {
  public:
   IMerge(FILES_LIST& list, const string& out_dir, const string& extn)
