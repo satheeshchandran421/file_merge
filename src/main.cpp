@@ -27,7 +27,7 @@ void UNIT_TESTS() {
   }
 #endif
 
-#if 1  // -ve case, wrong file name.
+#if 0 // -ve case, wrong file name.
   {
     string target = "../UNIT_TEST/output";
     FILES_LIST ar_list = {"../UNIT_TEST/input/3108-01-30.tgz",
@@ -51,7 +51,7 @@ void UNIT_TESTS() {
   }
 #endif
 
-#if 1  // -ve case, wrong output directory.
+#if 0  // -ve case, wrong output directory.
   {
     string target = "../UNIT_TEST/outputxxx";
     FILES_LIST ar_list = {"../UNIT_TEST/input/3108-01-30.tgz",

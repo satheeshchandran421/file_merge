@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include <memory>
 
 #include "merge_run.hpp"
 #include "logmerge.hpp"
@@ -9,15 +10,14 @@
 bool merge_files(FILES_LIST& archive_files, const string& target_directory,
                  FILE_TYPE ftype) {
   bool ret = false;
-  IMerge* merge = nullptr;
-
+  std::unique_ptr<IMerge> merge;
+ 
   switch (ftype) {
     case (FILE_TYPE::LOG_TEXT_FILE): {
-      merge = new LogFileMerge(archive_files, target_directory);
-      assert(merge);
+      merge = std::make_unique<LogFileMerge>(archive_files, target_directory);
     } break;
     case (FILE_TYPE::LOG_PCAP): {
-     // merge = new PCAPMerge(archive_files, target_directory);
+     // merge = std::make_unique<PCAPMerge>(archive_files, target_directory);
     } break;
     default:
       assert(0);
@@ -33,6 +33,5 @@ bool merge_files(FILES_LIST& archive_files, const string& target_directory,
     }
   }
 
-  delete merge;
   return (ret);
 }

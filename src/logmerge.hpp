@@ -8,9 +8,8 @@
 class LogFileMerge : public IMerge {
  public:
   LogFileMerge(FILES_LIST& ar_file_list, const string& out_directory);
-  bool do_merge(const FILES_LIST& list,
+  bool do_merge(const string& input_file_name,
                 const string& output_file_name) override;
- private:
   ~LogFileMerge() {}
 };
 
